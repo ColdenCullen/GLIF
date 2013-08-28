@@ -1,0 +1,53 @@
+﻿<Window x:Class="GLIF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="GLIF" mc:Ignorable="d" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        d:DesignHeight="413" d:DesignWidth="550" SizeToContent="WidthAndHeight"
+        DataContext="{Binding RelativeSource={RelativeSource Self}}">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <GroupBox Grid.Row="0" Margin="0,0,0,5" x:Name="SolutionPanel">
+            <GroupBox.Header>Step 1</GroupBox.Header>
+            <DockPanel>
+                <Label x:Name="solutionFileLabel"  Content="Solution File:" />
+                <TextBox x:Name="solutionFileText" IsReadOnly="True" Width="300" />
+                <Button x:Name="solutionFileBrowseButton" Content="Browse" Click="slnDirBrowse_Click" />
+            </DockPanel>
+        </GroupBox>
+        <GroupBox Grid.Row="1" Margin="0,5,0,5" x:Name="ProjectPanel" IsEnabled="False">
+            <GroupBox.Header>Step 2</GroupBox.Header>
+            <DockPanel Grid.Row="1" Margin="0,5,0,5">
+                <Label x:Name="projectLabel" Content="Select project to setup:" VerticalAlignment="Bottom">
+                    <Label.LayoutTransform>
+                        <RotateTransform Angle="270" />
+                    </Label.LayoutTransform>
+                </Label>
+                <ListBox x:Name="projectList" SelectionChanged="projectList_SelectionChanged" />
+            </DockPanel>
+        </GroupBox>
+        <GroupBox Grid.Row="2" Margin="0,5,0,0" x:Name="LibraryPanel" IsEnabled="False">
+            <GroupBox.Header>Step 3</GroupBox.Header>
+            <DockPanel>
+                <Label x:Name="libraryLabel" Content="Select your libraries:" />
+                <DockPanel>
+                    <CheckBox VerticalAlignment="Center" Width="76" Content="GLUT" x:Name="glutCB" IsChecked="{Binding Glut}"  />
+                    <CheckBox VerticalAlignment="Center" Width="76" Content="freeglut" x:Name="freeglutCB" IsChecked="{Binding Freeglut}" />
+                    <CheckBox VerticalAlignment="Center" Width="76" Content="GLFW" x:Name="glfwCB" IsChecked="{Binding Glfw}" />
+                    <CheckBox VerticalAlignment="Center" Width="76" Content="GLEW" x:Name="glewCB" IsChecked="{Binding Glew}" />
+                    <CheckBox VerticalAlignment="Center" Width="76" Content="FreeImage" x:Name="freeimageCB" IsChecked="{Binding FreeImage}" />
+                </DockPanel>
+            </DockPanel>
+        </GroupBox>
+        <GroupBox Grid.Row="3" Margin="0,5,0,0" x:Name="SubmitPanel" IsEnabled="False">
+            <GroupBox.Header>Step 4</GroupBox.Header>
+            <DockPanel>
+                <Button x:Name="installButton" Content="Install" Click="installButton_Click" Height="26" />
+            </DockPanel>
+        </GroupBox>
+    </Grid>
+</Window>
