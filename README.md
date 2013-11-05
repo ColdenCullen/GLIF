@@ -1,3 +1,6 @@
+## Looking for the newest distributable?
+Try looking [here](https://github.com/ColdenCullen/GLIF/releases).
+
 GLIF
 ====
 
