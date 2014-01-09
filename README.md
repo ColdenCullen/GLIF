@@ -19,7 +19,7 @@ Using GLIF is a very simple 4 step process.
 
 Once this is complete, there is one more step you must complete. You must tell VS to look for the installed .lib files during the linking phase. You may do that one of 2 ways.
 
-  1. Somewhere in your project (probably your main file), paste the following code: `#pragma comment( lib, "LIB_NAME.lib" )`. You must do this for each of the lib files in your "GL\x86\lib" folder.
+  1. Somewhere in your project (probably your main file), paste the following code: `#pragma comment( lib, "LIB_NAME.lib" )`. You must do this for each of the lib files in your "GL\x86\lib" folder, as well as `OpenGL32.lib`.
   2. In your project settings, navigate to Linker -> Input -> Additional Dependencies -> Edit, and enter the name of each lib file in your "GL\x86\lib" folder, seperated by a new line.
 
 ### Notes
